@@ -327,6 +327,11 @@ a:hover {
     color: #BD8811;
 }
 
+.social-icon a:focus {
+        color: black;
+        background: white;
+}
+
 .footer-bottom {
     background: #BD8811;
     text-align: center;
