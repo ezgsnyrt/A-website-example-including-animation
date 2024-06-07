@@ -1,5 +1,5 @@
 /* Styling for navagation */
-*{
+* {
     box-sizing: border-box;
     font-family: "Cormorant", serif;
 }
@@ -14,37 +14,42 @@
     background-repeat: no-repeat;
 }
 
-.navbar{
+.navbar {
     width:100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.nav-link{
+.nav-link {
     display: flex;
     padding: 0 4%;
 
 }
 
-.nav-link li{
+.nav-link li {
     display: inline-block;
     cursor: pointer;
 }
 
-.nav-link li a{
+.nav-link li a {
     color: #fff;
     text-decoration: none;
     padding: 5px 20px;
     font-size: 28px;
 }
 
-.nav-link li a:hover{
+.nav-link li a:hover {
     background: white;
     color:#333;
 }
 
-.logo img{
+.nav-link li a:focus {
+    background: #333;
+    color:white;
+}
+
+.logo img {
     width: 20%;
     float: left;
     padding-left: 6%;
@@ -57,13 +62,13 @@
     animation-iteration-count: infinite;
 }
 
-@keyframes mylogo{ /* details of keyframe animation */
+@keyframes mylogo { /* details of keyframe animation */
     from{transform: rotateX(0deg);}
     25% {transform: rotate(-15deg);}
     to{transform: rotate(15deg)}
  }
 
-.welcome-text{
+.welcome-text {
     position: absolute;
     margin: 2% 15%;
     color: white;
@@ -72,35 +77,24 @@
     padding-left: 15%;
 }
 
-.welcome-text h1{
+.welcome-text h1 {
     text-align: center;
     font-size: 45px;
     font-weight: 800;
 }
 
-
-/* Styling for body */
-
-/*The --offset custom variable can behave like a margin depending on how it's used in CSS. E.g.,
 :root {
-    --offset: 1rem;
-}
-.element{
-    margin-top: var(--offset);
-}*/
-
-:root{
     --offset: 2rem;
 }
 
-.container-mid{
+.container-mid {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%
 }
 
-.card-set{
+.card-set {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -110,7 +104,7 @@
     width: 100%
 }
 
-.card-content{
+.card-content {
     position: relative;
     overflow: hidden;
     max-width: 33rem;
@@ -122,7 +116,7 @@
     transition: all 0.3s ease;
 }
 
-.card-content img{
+.card-content img  {
     max-width: 100%;
     height: 100%;
     object-fit: cover;
@@ -132,7 +126,7 @@
 }
 
 .card::before,
-.card::after{
+.card::after {
     position: absolute;
     content: '';
     background: white; /* corner details */
@@ -142,40 +136,40 @@
 }
 
 .top-left::before,
-.top-left::after{
+.top-left::after {
     top: var(--offset);
     left: var(--offset);
 }
 
 .top-right::before,
-.top-right::after{
+.top-right::after {
     top: var(--offset);
     right: var(--offset);
 }
 
 .bottom-right::before,
-.bottom-right::after{
+.bottom-right::after {
     bottom: var(--offset);
     right: var(--offset);
 }
 
 .bottom-left::before,
-.bottom-left::after{
+.bottom-left::after {
     bottom: var(--offset);
     left: var(--offset);
 }
 
-.card::before{ /* Corner details */
+.card::before { /* Corner details */
     width: 0px;
     height: 1px;
 }
 
-.card::after{
+.card::after {
     height: 0px;
     width: 1px;
 }
 
-.card-content figcaption{   /* Use of figcation for styling */
+.card-content figcaption {   /* Use of figcation for styling */
     position: absolute;
     text-align: center;
     top: 50%;   /* Since .card-content has a position:absolute, top:50% refers to figcaption element should be halfway down the height of its containing element w/class card-content */
@@ -185,7 +179,7 @@
     transform: translate(-50%, -50%);
 }
 
-.card-content h3{
+.card-content h3 {
     font-size: 1.1rem;
     font-weight: bold;
     opacity: 0;
@@ -194,41 +188,41 @@
     transition: all 0.4s ease;
 }
 
-.card-content p{
+.card-content p {
     opacity: 0;
     font-size: 1rem;
     transition: all 0.4s ease;
 }
 
-.card-content:hover img{
+.card-content:hover img {
     zoom:1;
     filter: alpha(opacity=20);
     opacity: 0.3;
 }
 
-.card-content:hover .card::before{
+.card-content:hover .card::before {
     width: 40px;
     opacity: 1;
     transition-delay: 0.2s;
 }
 
-.card-content:hover .card::after{
+.card-content:hover .card::after {
     height: 40px;
     opacity: 1;
     transition-delay: 0.2s;
 }
 
-.card-content:hover h3{
+.card-content:hover h3 {
     opacity: 1;
     transition-delay: 0.25s;
 }
 
-.card-content:hover p{
+.card-content:hover p {
     opacity: 1;
     transition-delay: 0.3s;
 }
 
-.box{
+.box {
     width: 20px;
     height: 20px;
     background: #B57D12;
@@ -236,22 +230,22 @@
     animation: example 20s infinite;
 }
 
-@keyframes example{
+@keyframes example {
     from {left: 0px;}
     to {left: calc(100% - 20px);}
   }
 
 /* Styling for footer */
-.container-bottom{
+.container-bottom {
     font-size:28px;
     color: white;
 }
 
-.container-bottom a{
+.container-bottom a {
     color: white;
 }
 
-.footer-up{
+.footer-up {
     background-color: #132736;
     height:55vh;
     padding-top: 3%;
@@ -260,25 +254,25 @@
     justify-content: center;
 }
 
-.h2{
+.h2 {
     font-size: 28px;
     margin-bottom: 1%;
     text-align: center;
 }
 
-.footer-content{
+.footer-content {
     margin: 0 4%;
 }
 
-.footer-content ul{
+.footer-content ul {
     text-align: center;
 }
 
-.list{
+.list {
     padding: 0;
 }
 
-.list li{
+.list li {
     width: auto;
     text-align: center;
     list-style-type:none;
@@ -286,7 +280,7 @@
     position: relative;
 }
 
-.list li::before{
+.list li::before {
     content:'';
     position: absolute;
     transform: translate(-50%,-50%);
@@ -298,19 +292,24 @@
     transition-duration: .6s; /* Transition for quick links */
 }
 
-.list li:hover::before{
+.list li:hover::before {
     width: 70px;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     color: #5B6D7D;
 }
 
-.social-icon{
+.list li a:focus {
+    color: black;
+    background: white;
+}
+
+.social-icon {
     text-align:center;
     list-style: none;
     padding: 0%;
@@ -319,22 +318,22 @@ a:hover{
     font-size: 28px;
 }
 
-.social-icon li{
+.social-icon li {
     display: inline-block;
     padding: 1% 2%;
 }
 
-.social-icon i:hover{
+.social-icon i:hover {
     color: #BD8811;
 }
 
-.footer-bottom{
+.footer-bottom {
     background: #BD8811;
     text-align: center;
     padding: 1% 1%;
 }
 
-.footer-bottom p{
+.footer-bottom p {
     color: #132736;
     margin: 0;
     font-size: 18px;
