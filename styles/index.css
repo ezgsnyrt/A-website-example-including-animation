@@ -349,10 +349,24 @@ a:hover {
 }
 
 @media screen and (min-width:768px) and (max-width:1439px) {
+    .logo {
+        padding-left: 3%;
+    }
 
+    .logo img {
+        width: 18%;
+        min-width: 40px;
+    }
+
+    .nav-link {
+        width: 75%;
+        padding: 0 2%;
+    }
+
+    .nav-link li a {
+        font-size: 16px;
+    }
 }
 
-@media only screen and (min-width:1440px)  {
-
-}
+@media only screen and (min-width:1440px)  {}
 
