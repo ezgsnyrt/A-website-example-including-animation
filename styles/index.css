@@ -1,4 +1,4 @@
-/* Styling for navagation */
+/* Styling for navigation */
 * {
     box-sizing: border-box;
     font-family: "Cormorant", serif;
@@ -381,12 +381,12 @@ a:hover {
 
     .footer-up {
         justify-content: center;
+        height: 57vh;
     }
 
     .footer-content {
         margin: 2%;
         padding-right: 3%;
-
     }
 
     .footer-content h2 {
@@ -408,5 +408,9 @@ a:hover {
     }
 }
 
-@media only screen and (min-width:1440px)  {}
+@media only screen and (min-width:1440px)  {
+    .footer-up {
+        height: 60vh;
+    }
+}
 
