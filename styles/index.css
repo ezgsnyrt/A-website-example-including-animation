@@ -74,7 +74,7 @@
     color: white;
     font-size: 28px;
     font-style: italic;
-    padding-left: 15%;
+    padding-left: 5%;
 }
 
 .welcome-text h1 {
@@ -359,12 +359,24 @@ a:hover {
     }
 
     .nav-link {
-        width: 75%;
+        width: 70%;
         padding: 0 2%;
+        justify-content: flex-end;
+
     }
 
     .nav-link li a {
-        font-size: 16px;
+        font-size: 18px;
+    }
+
+    .welcome-text h1 {
+        font-size: 2.8rem;
+        padding-left: 0;
+    }
+
+    .welcome-text p {
+        font-size: 1.7rem;
+        text-align: center;
     }
 }
 
