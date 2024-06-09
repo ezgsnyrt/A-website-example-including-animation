@@ -1,19 +1,18 @@
 @use 'fonts';
 @use 'colors';
-@import "../node_modules/normalize-scss/sass/normalize";
-
-
 
 
 /* Styling for navigation */
 * {
     box-sizing: border-box;
-    font-family: "Cormorant", serif;
+    padding: 0;
+    margin: 0;
+    font-family: fonts.$primary-font-family;
 }
 
 .container-up {
     height: 50vh;
-    background-color: white;
+    background-color: colors.$primary-color;
     background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.2)), url("../images/background.jpg");
     background-size: cover;
     background-position: center center;
@@ -26,48 +25,51 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    .logo img {
+        width: 20%;
+        float: left;
+        padding: 5% 0 0 6%;
+        filter: invert(1);
+        position: relative;
+        display: inline-block;
+        animation-name: mylogo;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+
+    .nav-link {
+        display: flex;
+        padding: 0 4%;
+
+        & li {
+            display: inline-block;
+            cursor: pointer;
+
+            a {
+                color: colors.$primary-color;
+                text-decoration: none;
+                padding: 5px 20px;
+                font-size: fonts.$xl-font-size;
+
+                &:hover {
+                    background: colors.$primary-color;
+                    color: colors.$secondary-color;
+                }
+
+                &:focus {
+                    background: colors.$secondary-color;
+                    color: colors.$primary-color;
+                }
+            }
+        }
+    }
 }
 
-.nav-link {
-    display: flex;
-    padding: 0 4%;
 
-}
 
-.nav-link li {
-    display: inline-block;
-    cursor: pointer;
-}
 
-.nav-link li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 20px;
-    font-size: 28px;
-}
 
-.nav-link li a:hover {
-    background: white;
-    color:#333;
-}
-
-.nav-link li a:focus {
-    background: #333;
-    color:white;
-}
-
-.logo img {
-    width: 20%;
-    float: left;
-    padding-left: 6%;
-    padding-top: 5%;
-    filter: invert(1);
-    position: relative;
-    display: inline-block;
-    animation-name: mylogo;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-}
 
 @keyframes mylogo { /* details of keyframe animation */
     from{transform: rotateX(0deg);}
@@ -78,20 +80,20 @@
 .welcome-text {
     position: absolute;
     margin: 2% 15%;
-    color: white;
-    font-size: 28px;
+    color: colors.$primary-color;
+    font-size: fonts.$xl-font-size;
     font-style: italic;
     padding-left: 5%;
 }
 
 .welcome-text h1 {
     text-align: center;
-    font-size: 45px;
+    font-size: fonts.$header-font-size;
     font-weight: 800;
 }
 
 :root {
-    --offset: 2rem;
+    --offset: fonts.$xxl-font-size;
 }
 
 .container-mid {
@@ -105,7 +107,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: fonts.$xxs-font-size;
     margin: 5rem 5rem;
     max-width: 150rem;
     width: 100%
@@ -117,8 +119,8 @@
     max-width: 33rem;
     padding: 1% 1%;
     width: 100%;
-    color: #fff;
-    background: black;
+    color: colors.$primary-color;
+    background: colors.$dark-color;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -136,7 +138,7 @@
 .card::after {
     position: absolute;
     content: '';
-    background: white; /* corner details */
+    background: colors.$primary-color; /* corner details */
     z-index: 1;
     opacity: 0;
     transition: all 0.4s ease;
@@ -187,7 +189,7 @@
 }
 
 .card-content h3 {
-    font-size: 1.1rem;
+    font-size: fonts.$xs-font-size;
     font-weight: bold;
     opacity: 0;
     margin-bottom: 0.5rem;
@@ -197,7 +199,7 @@
 
 .card-content p {
     opacity: 0;
-    font-size: 1rem;
+    font-size: fonts.$xxs-font-size;
     transition: all 0.4s ease;
 }
 
@@ -232,7 +234,7 @@
 .box {
     width: 20px;
     height: 20px;
-    background: #B57D12;
+    background: colors.$box-backgorund-color;
     position: relative;
     animation: example 20s infinite;
 }
@@ -244,16 +246,16 @@
 
 /* Styling for footer */
 .container-bottom {
-    font-size:28px;
-    color: white;
+    font-size: fonts.$xl-font-size;
+    color: colors.$primary-color;
 }
 
 .container-bottom a {
-    color: white;
+    color: colors.$primary-color;
 }
 
 .footer-up {
-    background-color: #132736;
+    background-color: colors.$background-color;
     height:55vh;
     padding-top: 3%;
     margin:auto;
@@ -262,7 +264,7 @@
 }
 
 .h2 {
-    font-size: 28px;
+    font-size: fonts.$xl-font-size;
     margin-bottom: 1%;
     text-align: center;
 }
@@ -295,7 +297,7 @@
     top:100%;
     width: 0;
     height: 2px;
-    background: white;
+    background: colors.$primary-color;
     transition-duration: .6s; /* Transition for quick links */
 }
 
@@ -308,12 +310,12 @@ a {
 }
 
 a:hover {
-    color: #5B6D7D;
+    color: colors.$hover-color;
 }
 
 .list li a:focus {
-    color: black;
-    background: white;
+    color: colors.$dark-color;
+    background: colors.$primary-color;
 }
 
 .social-icon {
@@ -321,8 +323,8 @@ a:hover {
     list-style: none;
     padding: 0;
     margin: 0 4%;
-    color: white;
-    font-size: 28px;
+    color: colors.$primary-color;
+    font-size: fonts.$xl-font-size;
 }
 
 .social-icon li {
@@ -331,24 +333,24 @@ a:hover {
 }
 
 .social-icon i:hover {
-    color: #BD8811;
+    color: colors.$tertiary-color;
 }
 
 .social-icon a:focus {
-        color: black;
-        background: white;
+    color: colors.$dark-color;
+    background: colors.$primary-color;
 }
 
 .footer-bottom {
-    background: #BD8811;
+    background: colors.$tertiary-color;
     text-align: center;
     padding: 1% 1%;
 }
 
 .footer-bottom p {
-    color: #132736;
+    color: colors.$background-color;
     margin: 0;
-    font-size: 18px;
+    font-size: fonts.$xs-font-size;
 }
 
 @media screen and (min-width:320px) and (max-width:767px) {
@@ -373,16 +375,16 @@ a:hover {
     }
 
     .nav-link li a {
-        font-size: 18px;
+        font-size: fonts.$xs-font-size;
     }
 
     .welcome-text h1 {
-        font-size: 2.8rem;
+        font-size: fonts.$header-font-size;
         padding-left: 0;
     }
 
     .welcome-text p {
-        font-size: 1.7rem;
+        font-size: fonts.$l-font-size;
         text-align: center;
     }
 
@@ -397,19 +399,19 @@ a:hover {
     }
 
     .footer-content h2 {
-        font-size: 2rem;
+        font-size: fonts.$xxl-font-size;
     }
 
     .footer-content p {
-        font-size: 1.5rem;
+        font-size: fonts.$m-font-size;
     }
 
     .footer-content li a {
-        font-size: 1.5rem;
+        font-size: fonts.$m-font-size;
     }
 
     .footer-content .social-icon {
-        font-size: 1.3rem;
+        font-size: fonts.$s-font-size;
         text-align: justify;
         margin: 0;
     }
