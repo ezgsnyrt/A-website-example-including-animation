@@ -1,0 +1,423 @@
+@use 'fonts';
+@use 'colors';
+@import "../node_modules/normalize-scss/sass/normalize";
+
+
+
+
+/* Styling for navigation */
+* {
+    box-sizing: border-box;
+    font-family: "Cormorant", serif;
+}
+
+.container-up {
+    height: 50vh;
+    background-color: white;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.2)), url("../images/background.jpg");
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+.navbar {
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-link {
+    display: flex;
+    padding: 0 4%;
+
+}
+
+.nav-link li {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-link li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-size: 28px;
+}
+
+.nav-link li a:hover {
+    background: white;
+    color:#333;
+}
+
+.nav-link li a:focus {
+    background: #333;
+    color:white;
+}
+
+.logo img {
+    width: 20%;
+    float: left;
+    padding-left: 6%;
+    padding-top: 5%;
+    filter: invert(1);
+    position: relative;
+    display: inline-block;
+    animation-name: mylogo;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes mylogo { /* details of keyframe animation */
+    from{transform: rotateX(0deg);}
+    25% {transform: rotate(-15deg);}
+    to{transform: rotate(15deg)}
+ }
+
+.welcome-text {
+    position: absolute;
+    margin: 2% 15%;
+    color: white;
+    font-size: 28px;
+    font-style: italic;
+    padding-left: 5%;
+}
+
+.welcome-text h1 {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 800;
+}
+
+:root {
+    --offset: 2rem;
+}
+
+.container-mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%
+}
+
+.card-set {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 5rem 5rem;
+    max-width: 150rem;
+    width: 100%
+}
+
+.card-content {
+    position: relative;
+    overflow: hidden;
+    max-width: 33rem;
+    padding: 1% 1%;
+    width: 100%;
+    color: #fff;
+    background: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-content img  {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    backface-visibility: hidden;
+    vertical-align: top;
+    transition: all 0.3s ease;
+}
+
+.card::before,
+.card::after {
+    position: absolute;
+    content: '';
+    background: white; /* corner details */
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.top-left::before,
+.top-left::after {
+    top: var(--offset);
+    left: var(--offset);
+}
+
+.top-right::before,
+.top-right::after {
+    top: var(--offset);
+    right: var(--offset);
+}
+
+.bottom-right::before,
+.bottom-right::after {
+    bottom: var(--offset);
+    right: var(--offset);
+}
+
+.bottom-left::before,
+.bottom-left::after {
+    bottom: var(--offset);
+    left: var(--offset);
+}
+
+.card::before { /* Corner details */
+    width: 0px;
+    height: 1px;
+}
+
+.card::after {
+    height: 0px;
+    width: 1px;
+}
+
+.card-content figcaption {   /* Use of figcation for styling */
+    position: absolute;
+    text-align: center;
+    top: 50%;   /* Since .card-content has a position:absolute, top:50% refers to figcaption element should be halfway down the height of its containing element w/class card-content */
+    left:50%;
+    max-width: 20rem;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.card-content h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    opacity: 0;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1rem;
+    transition: all 0.4s ease;
+}
+
+.card-content p {
+    opacity: 0;
+    font-size: 1rem;
+    transition: all 0.4s ease;
+}
+
+.card-content:hover img {
+    zoom:1;
+    filter: alpha(opacity=20);
+    opacity: 0.3;
+}
+
+.card-content:hover .card::before {
+    width: 40px;
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+.card-content:hover .card::after {
+    height: 40px;
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+.card-content:hover h3 {
+    opacity: 1;
+    transition-delay: 0.25s;
+}
+
+.card-content:hover p {
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+
+.box {
+    width: 20px;
+    height: 20px;
+    background: #B57D12;
+    position: relative;
+    animation: example 20s infinite;
+}
+
+@keyframes example {
+    from {left: 0px;}
+    to {left: calc(100% - 20px);}
+  }
+
+/* Styling for footer */
+.container-bottom {
+    font-size:28px;
+    color: white;
+}
+
+.container-bottom a {
+    color: white;
+}
+
+.footer-up {
+    background-color: #132736;
+    height:55vh;
+    padding-top: 3%;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+}
+
+.h2 {
+    font-size: 28px;
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+.footer-content {
+    margin: 0 4%;
+}
+
+.footer-content ul {
+    text-align: center;
+}
+
+.list {
+    padding: 0;
+}
+
+.list li {
+    width: auto;
+    text-align: center;
+    list-style-type:none;
+    padding: 5%;
+    position: relative;
+}
+
+.list li::before {
+    content:'';
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top:100%;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition-duration: .6s; /* Transition for quick links */
+}
+
+.list li:hover::before {
+    width: 70px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #5B6D7D;
+}
+
+.list li a:focus {
+    color: black;
+    background: white;
+}
+
+.social-icon {
+    text-align:center;
+    list-style: none;
+    padding: 0;
+    margin: 0 4%;
+    color: white;
+    font-size: 28px;
+}
+
+.social-icon li {
+    display: inline-block;
+    padding: 1% 2%;
+}
+
+.social-icon i:hover {
+    color: #BD8811;
+}
+
+.social-icon a:focus {
+        color: black;
+        background: white;
+}
+
+.footer-bottom {
+    background: #BD8811;
+    text-align: center;
+    padding: 1% 1%;
+}
+
+.footer-bottom p {
+    color: #132736;
+    margin: 0;
+    font-size: 18px;
+}
+
+@media screen and (min-width:320px) and (max-width:767px) {
+
+}
+
+@media screen and (min-width:768px) and (max-width:1439px) {
+    .logo {
+        padding-left: 3%;
+    }
+
+    .logo img {
+        width: 18%;
+        min-width: 40px;
+    }
+
+    .nav-link {
+        width: 70%;
+        padding: 0 2%;
+        justify-content: flex-end;
+
+    }
+
+    .nav-link li a {
+        font-size: 18px;
+    }
+
+    .welcome-text h1 {
+        font-size: 2.8rem;
+        padding-left: 0;
+    }
+
+    .welcome-text p {
+        font-size: 1.7rem;
+        text-align: center;
+    }
+
+    .footer-up {
+        justify-content: center;
+        height: 57vh;
+    }
+
+    .footer-content {
+        margin: 2%;
+        padding-right: 3%;
+    }
+
+    .footer-content h2 {
+        font-size: 2rem;
+    }
+
+    .footer-content p {
+        font-size: 1.5rem;
+    }
+
+    .footer-content li a {
+        font-size: 1.5rem;
+    }
+
+    .footer-content .social-icon {
+        font-size: 1.3rem;
+        text-align: justify;
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width:1440px)  {
+    .footer-up {
+        height: 60vh;
+    }
+}
+
