@@ -1,8 +1,6 @@
 @use 'fonts';
 @use 'colors';
 @import "../node_modules/normalize-scss/sass/normalize";
-// @import 'script.js';
-
 
 /* Styling for navigation */
 * {
@@ -351,7 +349,6 @@
     }
 }
 
-
 .nav-toggle {
     display: none;
     border-radius: 5%;
@@ -459,7 +456,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            width: 100%;
+            width: 49%;
 
             h2 {
                 font-size: fonts.$l-font-size;
@@ -473,7 +470,6 @@
 
                 li {
                     padding: 0 2% 0 2%;
-
 
                     a {
                         font-size: fonts.$xs-font-size;
@@ -583,7 +579,6 @@
             }
         }
     }
-
 
     .footer-up {
         height: 60vh;
